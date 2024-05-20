@@ -1,16 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Your existing CSS styles here */
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: radial-gradient(circle, #ff9a9e, #fad0c4);
+    background: linear-gradient(to right, #8c00ff, #04065a);
     color: #333;
     overflow-x: hidden;
     position: relative;
+    width: 100%;
 }
 
 header {
@@ -30,7 +27,6 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
-    position: relative;
 }
 
 nav ul li a {
@@ -41,7 +37,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #fad0c4;
+    color: #08f2fa85;
 }
 
 .hero {
@@ -54,7 +50,7 @@ nav ul li a:hover {
 .hero h1 {
     margin-bottom: 10px;
     font-size: 50px;
-    background: -webkit-linear-gradient(#ff9a9e, #fad0c4);
+    background: -webkit-linear-gradient(#9900ff, #2f00ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -67,42 +63,16 @@ nav ul li a:hover {
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background: #ff9a9e;
+    background: #0044ff;
     color: #fff;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 5px;
     margin-top: 20px;
-    transition: background 0.3s, transform 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
-    transform: translate(-50%, -50%) scale(0.1);
-    transition: transform 0.5s;
-    border-radius: 50%;
-    z-index: 0;
-}
-
-.cta-button:hover::before {
-    transform: translate(-50%, -50%) scale(1);
+    transition: background 0.3s;
 }
 
 .cta-button:hover {
-    background: #fad0c4;
-    transform: translateY(-3px);
-}
-
-.cta-button span {
-    position: relative;
-    z-index: 1;
+    background: #5548ff;
 }
 
 section {
@@ -131,30 +101,7 @@ section {
     padding: 20px;
     width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
     height: fit-content;
-}
-
-.portfolio-item img {
-    max-width: 100%;
-    border-radius: 5px;
-    transition: transform 0.3s;
-}
-
-.portfolio-item:hover img {
-    transform: scale(1.1);
-}
-
-.portfolio-item h3 {
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-.portfolio-item p {
-    margin-top: 5px;
-    color: #777;
 }
 
 .portfolio-item:hover {
@@ -162,30 +109,24 @@ section {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-#copy-email-button {
-    padding: 10px 20px;
-    background: #ff9a9e;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    position: relative;
-    overflow: hidden;
+.portfolio-item img {
+    max-width: 100%;
+    border-radius: 5px;
 }
 
-#copy-email-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
-    transform: translate(-50%, -50%) scale(0.1);
-    transition: transform 0.5s;
-    border-radius: 50%;
-    z-index: 0;
+#copy-email-button {
+    padding: 10px 20px;
+    background: #ae00ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#copy-email-button:hover {
+    background: #0400fd;
+    transform: translateY(-3px);
 }
 
 #notification-bar {
@@ -195,4 +136,25 @@ section {
     color: white;
     margin-top: 10px;
     border-radius: 5px;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }

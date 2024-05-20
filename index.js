@@ -1,12 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
+    const notificationBar = document.getElementById('notification-bar');
+    const copyEmailButton = document.getElementById('copy-email-button');
+
+    copyEmailButton.addEventListener('click', () => {
+        const email = 'vxsy123@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+            notificationBar.style.display = 'block';
+            setTimeout(() => {
+                notificationBar.style.display = 'none';
+            }, 2000);
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    });
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     const particles = [];
-    const colors = ['#ff7e5f', '#feb47b', '#f79d00', '#64f38c', '#16a085'];
+    const colors = ['white', 'yellow', 'gray', 'dark_blue', 'purple'];
 
     const mouse = {
         x: null,
@@ -67,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            if (particles[i].size <= 0.2) {
+            if (particles[i].size <= 0.3) {
                 particles.splice(i, 1);
                 i--;
             }
@@ -81,4 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     animate();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
 });
